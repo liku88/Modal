@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" media="screen" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/index.css">
+	
+	<title>Cost Box</title>
+	<script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<!--  -->
+
+	<style>
+
+	</style>
+
+</head>
+
+<body>
+<!--    -----1st content starts here--------->
+	<div class="container">
+	<div class="modal fade" tabindex="-1" role="dialog" id="myModal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close " data-dismiss="modal" aria-label="Close"><span aria-hidden="true" class="mycus">&times;</span></button>
+        <h4 class="modal-title">Event Type</h4>
+      </div>
+      <div class="modal-body">
+        <span>Paid-event or free-event ?</span> <br> <br>
+        <input type="radio" name="payment" id="paid" onclick="check(0)">
+<label for="card">
+    <i class="fa fa-credit-card" aria-hidden="true"></i>
+    <span>Paid</span>
+</label>
+<input type="radio" name="payment" id="free" onclick="check1(1)">
+<label for="cash">
+    <i class="fa fa-money" aria-hidden="true"></i>
+    <span>Free</span>
+</label>       
+      </div>
+      <div class="modal-footer">
+        <button id="button1" type="button" class="btn btn-primary" onclick="shift()" style="visibility: hidden">Next &rarr;</button>
+          <br>
+        <button id="button2" type="button" class="btn btn-primary" data-dismiss="modal" style="visibility: hidden">Next &rarr;</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div> 
+</div>
+                  <!-- /.modal -->
+<!--       -----1st content ends here-------->
+
+	
+<!-------------	2nd container starts here------------------>
+
+	<div class="container">
+	<div class="modal fade" tabindex="-1" role="dialog" id="myModal1">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title"><a class="anchor" href="#" onclick="anchor1()"><i class="fa fa-arrow-left" aria-hidden="true"></i></a> Paid Event</h4>
+      </div>
+      <div class="modal-body">
+        <p>Single-cost event or multiple-cost event ? <a  class="anchor2"href="#" data-toggle="tooltip" data-placement="top" title="This is a tooltip.Use it to show if there is any help text"><i class="fa fa-info-circle" aria-hidden="true"></i></a> </p>
+        <input type="radio" name="payment" id="singlecost" onclick="check2(0)">
+<label for="card">
+    <i class="fa fa-credit-card" aria-hidden="true"></i>
+    <span>Single Cost</span>
+</label>
+<input type="radio" name="payment" id="multiplecost" onclick="check3(1)">
+<label for="cash">
+    <i class="fa fa-money" aria-hidden="true"></i>
+    <span>Multiple Cost</span>
+</label>       
+        
+        
+        
+        
+      </div>
+      <div class="modal-footer">
+        <button id="button3" type="button" class="btn btn-primary" onclick="shift1()" style="visibility: hidden">Next &rarr;</button> <br>
+        <button id="button4" type="button" class="btn btn-primary" onclick="shift2()" style="visibility: hidden">Next &rarr;</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+	</div>
+	
+<!--	---------2nd content ends here--------------->
+
+
+<!--	3rd content starts here-->
+	<div class="container">
+	<div class="modal fade" tabindex="-1" role="dialog" id="myModal2">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title"><a class="anchor" href="#" onclick="anchor2()"><i class="fa fa-arrow-left" aria-hidden="true"></i></a> Price &amp; Availability</h4>
+      </div>
+      <div class="modal-body">
+       <span>Price of ticket?</span> <br> <br>
+       <form class="form-inline">
+  <div class="form-group">
+    <label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
+    <div class="input-group">
+      <div class="input-group-addon">
+          <div class="dropdown">
+  <button class=" dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+    $
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+    <li><a href="#">Dollar</a></li>
+    <li><a href="#">Rupees</a></li>
+  </ul>
+</div>
+      </div>
+      <input type="text" class="form-control" id="exampleInputAmount" placeholder="Price Per ticket">
+      
+    </div>
+  </div>
+</form>
+     <br> <br>
+     <span>Availability?</span> <br> 
+     <input type="radio" name="online" id="">
+     <label for="">Online</label>
+     <input type="radio" name="online" id="" checked>
+     <label for="">offline</label>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success" data-dismiss="modal">Done <i class="fa fa-smile-o" aria-hidden="true"></i></button>
+        
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+	</div>
+<!--    3rd content ends here-->
+
+<!-- 4th content starts here-->
+    <div class="container">
+	<div class="modal fade" tabindex="-1" role="dialog" id="myModal3">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+       
+        <h4 class="modal-title"><a class="anchor" href="#" onclick="anchor3()"><i class="fa fa-arrow-left" aria-hidden="true"></i></a> Multiple Ticket
+        <a type="button" href="#" class="pull-right" onclick="shift3()">+ Category</a>
+        </h4>
+      </div>
+     
+      <div class="modal-body">
+        <p>1.</p>
+         <hr class="divider">
+       
+
+        <p>Category?</p>  
+        <input type="text" name="" id="catinput1" placeholder="Example:Entry,food,or parking etc" size="30"> <br> <br>
+        <p>Description</p>
+        <input type="text" name="" id="" placeholder="Description" size="50"> <br>
+        <p>Ticket price for this category ?</p>
+        <form class="form-inline" >
+  <div class="form-group">
+    <label class="sr-only" for="exampleInputAmount1">Amount (in dollars)</label>
+    <div class="input-group">
+      <div class="input-group-addon">
+          <div class="dropdown">
+  <button class=" dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+    $
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+    <li><a href="#">Dollar</a></li>
+    <li><a href="#">Rupees</a></li>
+  </ul>
+</div>
+      </div>
+      <input  type="text" class="form-control" id="exampleInputAmount1" placeholder="Price Per ticket">
+      
+    </div>
+  </div>
+</form>
+       
+      </div>
+      <div class="modal-footer">
+       <p class="pull-left">Total Cost: 0</p>
+        <button type="button" class="btn btn-success" data-dismiss="modal">Done <i class="fa fa-smile-o" aria-hidden="true"></i></button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+	</div>
+<!--	4th content ends here-->
+
+<!--    5th content starts here-->
+    
+     <div class="container">
+	<div class="modal fade" tabindex="-1" role="dialog" id="myModal4">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+       
+        <h4 class="modal-title"><a class="anchor" href="#" onclick="anchor4()"><i class="fa fa-arrow-left" aria-hidden="true"></i></a> Multiple Ticket
+        <a type="button" href="#" class="pull-right" onclick="shift4()">+ Category</a></h4>
+      </div>
+      <div class="modal-body" id="body1">
+      <div class="dropdown pull-right">
+  <button class=" dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+    <li><a href="#">category1</a></li>
+  </ul>
+</div>
+        <p id="test">One fine body&hellip;</p>
+        <hr class="divider">
+        <button onclick="final()" type="button" class="pull-right"><i class="fa fa-times-circle-o" aria-hidden="true"></i></button>
+         <p>2.</p>
+         <p>Category?</p>  
+        <input type="text" name="" id="catinput2" placeholder="Example:Entry,food,or parking etc" size="30"> <br> <br>
+        <p>Description</p>
+        <input type="text" name="" id="" placeholder="Description" size="50"> <br>
+        <p>Ticket price for this category ?</p>
+        <form class="form-inline" >
+  <div class="form-group">
+    <label class="sr-only" for="exampleInputAmount2">Amount (in dollars)</label>
+    <div class="input-group">
+      <div class="input-group-addon">
+          <div class="dropdown">
+  <button class=" dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+    $
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+    <li><a href="#">Dollar</a></li>
+    <li><a href="#">Rupees</a></li>
+  </ul>
+</div>
+      </div>
+      <input  type="text" class="form-control" id="exampleInputAmount2" placeholder="Price Per ticket">
+      
+    </div>
+  </div>
+</form>
+         
+        
+       
+      </div>
+      <div class="modal-footer">
+       <p id="footer" class="pull-left"></p>
+        <button type="button" class="btn btn-success" data-dismiss="modal">Done <i class="fa fa-smile-o" aria-hidden="true"></i></button>
+        
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+	</div>
+<!--   5th container ends here-->
+
+<!--   6th content starts here-->
+     <div class="container">
+	<div class="modal fade" tabindex="-1" role="dialog" id="myModal5">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title"><a class="anchor" href="#" onclick="anchor5()"><i class="fa fa-arrow-left" aria-hidden="true"></i></a> Multiple Ticket</h4>
+      </div>
+      <div class="modal-body" id="body2">
+          <div class="dropdown pull-right">
+  <button class=" dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+    <li><a href="#">category2</a></li>
+  </ul>
+</div>
+    <p id="test1">One fine body&hellip;</p>
+    <hr class="divider">
+        <div class="dropdown pull-right">
+  <button class=" dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+    <li><a href="#">category2</a></li>
+  </ul>
+</div>
+     <p id="test2">One fine body&hellip;</p>
+     <hr class="divider">
+      <button onclick="final1()" type="button" class="pull-right"><i class="fa fa-times-circle-o" aria-hidden="true"></i></button>
+     <p>3.</p>
+       
+         <p>Category?</p>  
+        <input type="text" name="" id="catinput2" placeholder="Example:Entry,food,or parking etc" size="30"> <br> <br>
+        <p>Description</p>
+        <input type="text" name="" id="" placeholder="Description" size="50"> <br>
+        <p>Ticket price for this category ?</p>
+        <form class="form-inline" >
+  <div class="form-group">
+    <label class="sr-only" for="exampleInputAmount2">Amount (in dollars)</label>
+    <div class="input-group">
+      <div class="input-group-addon">
+          <div class="dropdown">
+  <button class=" dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+    $
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+    <li><a href="#">Dollar</a></li>
+    <li><a href="#">Rupees</a></li>
+  </ul>
+</div>
+      </div>
+      <input  type="text" class="form-control" id="exampleInputAmount2" placeholder="Price Per ticket">
+      
+    </div>
+  </div>
+</form>
+     
+      </div>
+      <div class="modal-footer">
+       <p id="footer1" class="pull-left"></p>
+        <button type="button" class="btn btn-success" data-dismiss="modal">Done <i class="fa fa-smile-o" aria-hidden="true"></i></button>
+        
+        
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+	</div>
+<!--   6th contents end here-->
+    
+    
+    
+    
+    
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+	<script src="index.js">
+	</script>
+
+</body>
+
+</html>
